@@ -3,6 +3,8 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
+RUN apk update
+
 RUN apk add --no-cache jq nodejs nodejs-npm \ 
 	&& npm config set unsafe-perm true \
 	&& npm install -g hubitat-mqtt-bridge mustache \
